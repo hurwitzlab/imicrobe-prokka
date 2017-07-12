@@ -1,0 +1,72 @@
+{
+  "available": true,
+  "checkpointable": false,
+  "defaultMemoryPerNode": 32,
+  "defaultProcessorsPerNode": 16,
+  "defaultMaxRunTime": "12:00:00",
+  "defaultNodeCount": 1,
+  "defaultQueue": "serial",
+  "deploymentPath": "<developer>/applications/imicrobe-prokka-0.0.1/stampede",
+  "deploymentSystem": "data.iplantcollaborative.org",
+  "executionSystem": "tacc-stampede-jklynch",
+  "executionType": "HPC",
+  "helpURI": "http://protocols.io",
+  "label": "iMicrobe Prokka",
+  "longDescription": "iMicrobe Prokka",
+  "modules": [],
+  "name": "imicrobe-prokka",
+  "ontology": [
+    "http://sswapmeet.sswap.info/agave/apps/Application"
+  ],
+  "parallelism": "SERIAL",
+  "shortDescription": "iMicrobe Prokka",
+  "tags": [
+    "prokka",
+    "genome annotation",
+    "prokaryote"
+  ],
+  "templatePath": "template.sh",
+  "testPath": "test.sh",
+  "version": "0.0.1",
+  "inputs": [
+    {
+      "id": "INPUT_FILE",
+      "value": {
+        "default": "",
+        "required": true,
+        "visible": true
+      },
+      "semantics": {
+        "fileTypes": [
+          "raw-0"
+        ]
+      },
+      "details": {
+        "description": "FASTA DNA contigs",
+        "label": "Input File",
+        "argument": "",
+        "showArgument": false
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "id": "command line arguments",
+      "value": {
+        "default": "",
+        "required": true,
+        "type": "string",
+        "visible": true
+      },
+      "semantics": {
+      },
+      "details": {
+        "argument": "",
+        "description": "command line arguments",
+        "label": "command line arguments",
+        "showArgument": false
+      }
+    }
+  ],
+  "outputs": []
+}

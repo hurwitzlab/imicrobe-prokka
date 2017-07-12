@@ -1,0 +1,35 @@
+Bootstrap: docker
+From: ubuntu:latest
+
+%runscript
+
+    /app/prokka/bin/prokka $@
+
+%setup
+    # mount the imicrobe-prokka directory for use in %post
+    mkdir "$SINGULARITY_ROOTFS/imicrobe-prokka"
+    mount --no-mtab --bind `pwd` "$SINGULARITY_ROOTFS/imicrobe-prokka"
+
+%post
+   apt update
+   apt -y install apt-utils git
+   apt -y install default-jre
+   apt -y install libdatetime-perl libxml-simple-perl libdigest-md5-perl
+   apt -y install bioperl
+
+   # create a directory for installed dependencies
+   export APP_DIR=/app
+   mkdir -p $APP_DIR
+
+   # install prokka
+   cd $APP_DIR
+   git clone https://github.com/tseemann/prokka.git
+   prokka/bin/prokka --setupdb
+
+   # create mount points for TACC directories
+   mkdir /home1
+   mkdir /scratch
+   mkdir /work
+
+%test
+   /app/prokka/bin/prokka --help
