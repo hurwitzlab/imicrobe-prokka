@@ -1,3 +1,6 @@
+*.img
+*.img.bz2
+
 # Prerequisites
 *.d
 
