@@ -17,9 +17,9 @@ iput-container:
 
 iget-container:
 	iget -fKP $(APP).img.bz2
-	cp $(APP).img.bz2 stampede/
 	bunzip2 --force --keep $(APP).img.bz2
 	mv $(APP).img singularity/
+	mv $(APP).img.bz2 stampede/
 
 test:
 	sbatch test.sh
