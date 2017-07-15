@@ -12,7 +12,7 @@ From: ubuntu:latest
 
 %post
    apt update
-   apt -y install apt-utils git
+   apt -y install apt-utils git wget
    apt -y install default-jre
    apt -y install libdatetime-perl libxml-simple-perl libdigest-md5-perl
    apt -y install bioperl
@@ -26,10 +26,24 @@ From: ubuntu:latest
    git clone https://github.com/tseemann/prokka.git
    prokka/bin/prokka --setupdb
 
+   # update tbl2asn as directed in prokka FAQ
+   #wget ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/converters/by_program/tbl2asn/linux64.tbl2asn.gz
+   #gunzip linux64.tbl2asn.gz
+   #mv linux64.tbl2asn /app/prokka/binaries/linux/tbl2asn
+   # chmod is failing
+   #chmod u+x /app/prokka/binaries/linux/tbl2asn
+
    # create mount points for TACC directories
    mkdir /home1
    mkdir /scratch
    mkdir /work
 
+%environment
+   # prokka cannot find tbl2asn by itself
+   PATH=/app/prokka/binaries/linux:$PATH
+   # perl likes a valid locale
+   export LC=C
+
 %test
    /app/prokka/bin/prokka --help
+   /app/prokka/binaries/linux/tbl2asn --help

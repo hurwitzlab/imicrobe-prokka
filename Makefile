@@ -11,14 +11,15 @@ container:
 	sudo singularity bootstrap singularity/$(APP).img singularity/$(APP).def
 
 iput-container:
-	rm singularity/$(APP).img.bz2
-	bzip2 singularity/$(APP).img
+	rm -f singularity/$(APP).img.bz2
+	bzip2 --force --keep singularity/$(APP).img
 	iput -fKP singularity/$(APP).img.bz2
 
 iget-container:
 	iget -fKP $(APP).img.bz2
-	bunzip2 $(APP).img.bz2
-	mv $(APP).img stampede/
+	cp $(APP).img.bz2 stampede/
+	bunzip2 --force --keep $(APP).img.bz2
+	mv $(APP).img singularity/
 
 test:
 	sbatch test.sh
