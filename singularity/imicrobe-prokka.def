@@ -49,4 +49,4 @@ From: ubuntu:latest
 
 %test
    /app/prokka/bin/prokka --help
-   /app/prokka/binaries/linux/tbl2asn --help
+   /app/prokka/binaries/linux/tbl2asn -
