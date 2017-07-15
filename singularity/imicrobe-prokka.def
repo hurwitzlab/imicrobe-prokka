@@ -33,6 +33,8 @@ From: ubuntu:latest
    # chmod is failing
    #chmod u+x /app/prokka/binaries/linux/tbl2asn
 
+   cp $SINGULRITY_ROOTFS/imicrobe-prokka/tbl2asn /app/prokka/bin/
+
    # create mount points for TACC directories
    mkdir /home1
    mkdir /scratch
@@ -40,7 +42,8 @@ From: ubuntu:latest
 
 %environment
    # prokka cannot find tbl2asn by itself
-   PATH=/app/prokka/binaries/linux:$PATH
+   # trying to cut tbl2asn out of the picture
+   PATH=/app/prokka/bin:$PATH
    # perl likes a valid locale
    export LC=C
 
