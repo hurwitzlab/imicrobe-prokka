@@ -1,1 +1,2 @@
-echo "tbl2asn has been removed from the prokka pipeline"
+# this output will pass prokka's version test for tbl2asn
+echo "tbl2asn 25.3 has been removed from the prokka pipeline"
