@@ -9,17 +9,18 @@ container:
 	rm -f singularity/$(APP).img
 	sudo singularity create --size 3072 singularity/$(APP).img
 	sudo singularity bootstrap singularity/$(APP).img singularity/$(APP).def
+	sudo chown reference=singularity/$(APP).def singularity/$(APP).img
 
 iput-container:
-	rm -f singularity/$(APP).img.bz2
-	bzip2 --force --keep singularity/$(APP).img
-	iput -fKP singularity/$(APP).img.bz2
+	rm -f singularity/$(APP).img.xz
+	xz --compress --force --keep singularity/$(APP).img
+	iput -fKP singularity/$(APP).img.xz
 
 iget-container:
-	iget -fKP $(APP).img.bz2
-	bunzip2 --force --keep $(APP).img.bz2
+	iget -fKP $(APP).img.xz
+	xz --decompress --force --keep $(APP).img.xz
 	mv $(APP).img singularity/
-	mv $(APP).img.bz2 stampede/
+	mv $(APP).img.xz stampede/
 
 test:
 	sbatch test.sh

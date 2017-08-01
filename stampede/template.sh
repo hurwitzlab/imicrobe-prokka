@@ -2,7 +2,7 @@
 
 echo "Started $(date)"
 
-sh run.sh $OUT_DIR
+sh run.sh $INPUT_FILE $ARGS
 
 echo "Ended $(date)"
 exit 0

@@ -54,7 +54,7 @@
       "id": "command line arguments",
       "value": {
         "default": "",
-        "required": true,
+        "required": false,
         "type": "string",
         "visible": true
       },
