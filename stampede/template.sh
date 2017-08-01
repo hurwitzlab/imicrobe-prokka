@@ -2,10 +2,10 @@
 
 echo "Started $(date)"
 
-echo $INPUT_FILE
-echo $ARGS
+echo "input file: ${INPUT_FILE}"
+echo "arguments: ${ARGS}"
 
-sh run.sh $INPUT_FILE $ARGS
+sh run.sh ${INPUT_FILE} ${ARGS}
 
 echo "Ended $(date)"
 exit 0
