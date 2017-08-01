@@ -11,7 +11,7 @@ module load singularity
 #echo ${LAUNCHER_JOB_FILE}
 
 xz --decompress imicrobe-prokka.img.xz
-singularity run imicrobe-prokka.img @$
+singularity run imicrobe-prokka.img $@ --compliant --metagenome --cpus 16
 
 #$LAUNCHER_DIR/paramrun
 #echo "Ended launcher"
