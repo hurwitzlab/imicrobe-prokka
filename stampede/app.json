@@ -51,7 +51,7 @@
   ],
   "parameters": [
     {
-      "id": "command line arguments",
+      "id": "ARGS",
       "value": {
         "default": "",
         "required": false,

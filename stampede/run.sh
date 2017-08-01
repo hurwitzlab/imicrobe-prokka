@@ -10,6 +10,8 @@ module load singularity
 #export LAUNCHER_JOB_FILE=`pwd`/launcher_jobfile
 #echo ${LAUNCHER_JOB_FILE}
 
+echo $@
+
 xz --decompress imicrobe-prokka.img.xz
 singularity run imicrobe-prokka.img $@ --compliant --metagenome --cpus 16
 
