@@ -23,7 +23,8 @@ From: ubuntu:latest
 
    # install prokka
    cd $APP_DIR
-   git clone https://github.com/tseemann/prokka.git
+   #git clone https://github.com/tseemann/prokka.git
+   git clone https://github.com/hurwitzlab/prokka.git
    prokka/bin/prokka --setupdb
 
    cp $SINGULRITY_ROOTFS/imicrobe-prokka/tbl2asn /app/prokka/bin/

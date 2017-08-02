@@ -13,7 +13,7 @@ module load singularity
 echo "all arguments: $@"
 
 xz --decompress imicrobe-prokka.img.xz
-singularity run imicrobe-prokka.img $@ --compliant --metagenome --cpus 16
+singularity run imicrobe-prokka.img $@ --notbl2asn --compliant --metagenome --cpus 16
 
 #$LAUNCHER_DIR/paramrun
 #echo "Ended launcher"
