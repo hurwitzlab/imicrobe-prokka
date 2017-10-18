@@ -10,7 +10,7 @@
   "deploymentSystem": "data.iplantcollaborative.org",
   "executionSystem": "tacc-stampede-jklynch",
   "executionType": "HPC",
-  "helpURI": "http://protocols.io",
+  "helpURI": "https://github.com/tseemann/prokka",
   "label": "iMicrobe Prokka",
   "longDescription": "iMicrobe Prokka",
   "modules": [],
