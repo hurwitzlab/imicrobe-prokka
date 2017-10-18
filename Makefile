@@ -9,7 +9,7 @@ container:
 	rm -f singularity/$(APP).img
 	sudo singularity create --size 3072 singularity/$(APP).img
 	sudo singularity bootstrap singularity/$(APP).img singularity/$(APP).def
-	sudo chown reference=singularity/$(APP).def singularity/$(APP).img
+	sudo chown --reference=singularity/$(APP).def singularity/$(APP).img
 
 iput-container:
 	rm -f singularity/$(APP).img.xz
