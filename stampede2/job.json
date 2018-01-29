@@ -1,0 +1,8 @@
+{
+  "name": "imicrobe-prokka-test",
+  "appId": "imicrobe-prokka-0.0.2",
+  "archive": true,
+  "inputs": {
+    "INPUT_FILE": "jklynch/test/imicrobe-prokka/E_coli_S_flexneri_0.001.fa"
+  }
+}

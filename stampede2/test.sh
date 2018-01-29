@@ -2,9 +2,9 @@
 
 #SBATCH -A iPlant-Collabs
 #SBATCH -N 1
-#SBATCH -n 16
+#SBATCH -n 1
 #SBATCH -t 00:30:00
-#SBATCH -p development
+#SBATCH -p skx-normal
 #SBATCH -J test-app-name
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user <developer>@email.arizona.edu
