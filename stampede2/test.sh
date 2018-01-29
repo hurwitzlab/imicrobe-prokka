@@ -9,4 +9,4 @@
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user jklynch@email.arizona.edu
 
-./run.sh test.fa
+./run.sh test.fa --cpus 0 --mincontiglen 100
