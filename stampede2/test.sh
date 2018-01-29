@@ -5,16 +5,8 @@
 #SBATCH -n 1
 #SBATCH -t 00:30:00
 #SBATCH -p skx-normal
-#SBATCH -J test-app-name
+#SBATCH -J imicrobe-prokka-test
 #SBATCH --mail-type BEGIN,END,FAIL
-#SBATCH --mail-user <developer>@email.arizona.edu
+#SBATCH --mail-user jklynch@email.arizona.edu
 
-OUT_DIR="$SCRATCH/app-name/test"
-
-if [[ -d $OUT_DIR ]]; then
-  rm -rf $OUT_DIR
-fi
-
-mkdir -p $OUT_DIR
-
-./run.sh $OUT_DIR
+./run.sh test.fa

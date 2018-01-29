@@ -6,8 +6,8 @@ clean:
 	find . \( -name \*.conf -o -name \*.out -o -name \*.log -o -name \*.param -o -name launcher_jobfile_\* \) -exec rm {} \;
 
 container:
-	rm -f singularity/$(APP).img
-	sudo singularity create --size 3072 singularity/$(APP).img
+	rm -f stampede2/$(APP).img
+	sudo singularity create --size 3072 stampede2/$(APP).img
 	sudo singularity bootstrap stampede2/$(APP).img singularity/$(APP).def
 	sudo chown --reference=singularity/$(APP).def stampede2/$(APP).img
 
