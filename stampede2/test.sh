@@ -9,6 +9,5 @@
 #SBATCH --mail-type BEGIN,END,FAIL
 #SBATCH --mail-user jklynch@email.arizona.edu
 
-
 # include --force to overwrite output from previous tests
 ./run.sh test.fa --cpus 0 --force --outdir PROKKA_TEST
